@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Rasi Afeef · Freelance Penetration Tester</title>
+<meta name="description" content="Independent security researcher and freelance penetration tester. Web, API, mobile, infrastructure, cloud, LLM, source-code review, thick-client. Public CVEs and HackerOne reputation." />
+<meta name="theme-color" content="#0a0e14" />
+<meta name="author" content="Rasi Afeef" />
+<link rel="canonical" href="https://rasiafeef.com/" />
+
+<!-- Icons -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://rasiafeef.com/" />
+<meta property="og:title" content="Rasi Afeef · Freelance Penetration Tester" />
+<meta property="og:description" content="Public CVEs, HackerOne track record, and manual source-aware testing across web, API, mobile, cloud, LLM, infra, code review, and thick clients." />
+<meta property="og:image" content="https://rasiafeef.com/og.svg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Rasi Afeef · Freelance Penetration Tester" />
+<meta name="twitter:description" content="Public CVEs, HackerOne track record, and manual source-aware testing." />
+<meta name="twitter:image" content="https://rasiafeef.com/og.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Background layers -->
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="logo" href="#top">
+    <span class="logo-mark">&gt;_</span>
+    <span class="logo-text">rasi<span class="accent">.afeef</span></span>
+  </a>
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+      <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+    </button>
+    <a class="nav-cta" href="#contact">Contact <span aria-hidden="true">→</span></a>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="hero-badge"><span class="dot"></span> Open for new engagements</div>
+      <h1>
+        Penetration tests<br>
+        that find what<br>
+        <span class="gradient">others miss.</span>
+      </h1>
+      <p class="lede">
+        Independent security researcher and freelance penetration tester.
+        I help product teams ship safer software through manual, source-aware testing
+        across web, mobile, API, infrastructure, cloud, and AI surfaces.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Start a project</a>
+        <a href="#proof" class="btn btn-ghost">View public record <span aria-hidden="true">↓</span></a>
+      </div>
+      <ul class="hero-trust">
+        <li><a href="https://wordfence.com/threat-intel/vulnerabilities/researchers/rasi-afeef" target="_blank" rel="noopener">Wordfence Threat Intel ↗</a></li>
+        <li><a href="https://hackerone.com/bug_digger21" target="_blank" rel="noopener">HackerOne ↗</a></li>
+        <li><span>bug.digg3r@gmail.com</span></li>
+      </ul>
+    </div>
+
+    <!-- Code review panel (cycles through real-world vulnerability snippets) -->
+    <div class="code-panel" id="codePanel" aria-hidden="true">
+      <header class="cp-bar">
+        <div class="cp-tabs">
+          <span class="cp-tab is-active" id="cpFile">file.ts</span>
+          <span class="cp-lang" id="cpLang">TS</span>
+        </div>
+        <div class="cp-meta">
+          <span class="cp-status">
+            <span class="cp-status-dot"></span>
+            review
+          </span>
+          <span class="cp-counter" id="cpCounter">01 / 06</span>
+        </div>
+      </header>
+
+      <div class="cp-stage">
+        <pre class="cp-code" id="cpCode"></pre>
+        <div class="cp-callout" id="cpCallout">
+          <div class="cp-callout-head">
+            <span class="cp-sev" id="cpSev">High</span>
+            <span class="cp-rule" id="cpRule">SEC-101</span>
+          </div>
+          <div class="cp-callout-body" id="cpNote">Loading.</div>
+        </div>
+      </div>
+
+      <footer class="cp-foot">
+        <div class="cp-find">
+          <span class="cp-find-label">finding</span>
+          <span class="cp-find-text" id="cpFind">Drive-by consent flip</span>
+        </div>
+        <div class="cp-dots" id="cpDots" role="tablist"></div>
+      </footer>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <span>scroll</span>
+    <div class="hsh-line"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" id="proof">
+  <div class="stats-inner">
+    <div class="section-tag">// numbers</div>
+    <h2 class="section-title">Quiet receipts.</h2>
+    <p class="section-lede">A small, verifiable footprint. Public CVEs, coordinated disclosure, and a steady cadence of work for vendors and platforms.</p>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-num" data-count="18" data-suffix="+">0</div>
+        <div class="stat-label">Public CVEs</div>
+        <div class="stat-sub">Coordinated through Wordfence Threat Intel</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="60" data-suffix="+">0</div>
+        <div class="stat-label">Programs reported</div>
+        <div class="stat-sub">HackerOne, Bugcrowd, vendor VDPs</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="8">0</div>
+        <div class="stat-label">Specialties</div>
+        <div class="stat-sub">Web, API, mobile, infra, cloud, code, LLM, thick</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="24" data-suffix="h">0</div>
+        <div class="stat-label">Response time</div>
+        <div class="stat-sub">From inquiry to a scoped proposal</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-grid">
+      <div class="about-copy">
+        <div class="section-tag">// about</div>
+        <h2 class="section-title">A decade deep in offensive security.</h2>
+        <p class="section-lede">
+          I have spent the better part of ten years finding the bugs that ship past code
+          review and scanners. From WordPress plugins to enterprise GraphQL gateways to
+          mobile apps with eight figure user counts, my work has been shipped, patched,
+          and publicly disclosed across hundreds of programs.
+        </p>
+        <p class="about-body">
+          I work the way I would want a tester to work for my own product: manual first,
+          source aware, with reports your engineers can act on without translation. No
+          inflated severities, no vague paragraphs, no proprietary scanner outputs
+          dressed up as findings. Reproducible PoCs, severity rationale you can defend in
+          a triage meeting, and remediation guidance that ships.
+        </p>
+        <ul class="about-bullets">
+          <li><strong>Independent.</strong> No agency overhead, you talk to the operator who is testing your asset.</li>
+          <li><strong>Disclosure-friendly.</strong> Coordinated through Wordfence, HackerOne, Bugcrowd, and direct vendor channels.</li>
+          <li><strong>Source aware.</strong> I read the code where I can. Findings improve when you understand intent.</li>
+          <li><strong>NDA on request.</strong> Mutual NDA before any scoping detail leaves the call.</li>
+        </ul>
+      </div>
+      <aside class="about-side">
+        <div class="about-card">
+          <div class="ac-row">
+            <span class="ac-key">Based</span>
+            <span class="ac-val">Remote, available worldwide</span>
+          </div>
+          <div class="ac-row">
+            <span class="ac-key">Languages</span>
+            <span class="ac-val">English</span>
+          </div>
+          <div class="ac-row">
+            <span class="ac-key">Engagement</span>
+            <span class="ac-val">Audits, retainers, code review</span>
+          </div>
+          <div class="ac-row">
+            <span class="ac-key">Reporting</span>
+            <span class="ac-val">HTML / PDF, JSON for triage</span>
+          </div>
+          <div class="ac-row">
+            <span class="ac-key">Notice period</span>
+            <span class="ac-val">2 to 4 weeks typical</span>
+          </div>
+          <div class="ac-row">
+            <span class="ac-key">Public profile</span>
+            <span class="ac-val">
+              <a href="https://wordfence.com/threat-intel/vulnerabilities/researchers/rasi-afeef" target="_blank" rel="noopener">Wordfence</a>
+              <span class="dim">·</span>
+              <a href="https://hackerone.com/bug_digger21" target="_blank" rel="noopener">HackerOne</a>
+            </span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="exp" id="experience">
+  <div class="exp-inner">
+    <div class="section-tag">// experience</div>
+    <h2 class="section-title">Career, in four turns.</h2>
+    <ol class="timeline">
+      <li class="tl-row">
+        <div class="tl-when">2014 to 2016</div>
+        <div class="tl-what">
+          <h4>Application engineer, then security focus</h4>
+          <p>Started in product engineering. Year of security incidents pulled me to the offensive side and never let go. Self-taught through CTFs, write-ups, and a lot of broken Burp configs.</p>
+        </div>
+      </li>
+      <li class="tl-row">
+        <div class="tl-when">2016 to 2020</div>
+        <div class="tl-what">
+          <h4>Full time bug bounty hunter</h4>
+          <p>Public disclosures across HackerOne, Bugcrowd, and vendor VDPs. Coordinated 18 plus CVEs through Wordfence Threat Intel covering CSRF, missing authorization, and stored XSS chains in WordPress plugins.</p>
+        </div>
+      </li>
+      <li class="tl-row">
+        <div class="tl-when">2020 to 2023</div>
+        <div class="tl-what">
+          <h4>Application security, in house</h4>
+          <p>Led red team engagements, threat models, and security reviews at consumer scale. Built internal tooling for surface enumeration and bundled JavaScript forensics.</p>
+        </div>
+      </li>
+      <li class="tl-row tl-now">
+        <div class="tl-when">2024 to present</div>
+        <div class="tl-what">
+          <h4>Independent, freelance</h4>
+          <p>Selected engagements for product teams that want manual depth instead of checkbox audits. Mostly web, API, mobile, and AI surfaces. Quietly deep, fully remote.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- CVE ROTATING CARD -->
+<section class="cves" id="record">
+  <div class="cves-inner">
+    <div class="cves-header">
+      <div class="section-tag">// public record</div>
+      <h2 class="section-title">Eighteen advisories, one researcher.</h2>
+      <p class="section-lede">A rotating sample of CVEs I have authored. The full list is on <a href="https://wordfence.com/threat-intel/vulnerabilities/researchers/rasi-afeef" target="_blank" rel="noopener" class="ilink">Wordfence Threat Intel</a>.</p>
+    </div>
+
+    <div class="cve-deck" id="cveDeck" aria-live="polite">
+      <button class="deck-nav prev" id="cvePrev" aria-label="Previous CVE">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="deck-nav next" id="cveNext" aria-label="Next CVE">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+      <article class="cve-card" id="cveCard">
+        <header class="card-top">
+          <div class="card-meta">
+            <span class="card-id" id="cId">CVE-0000-0000</span>
+            <span class="card-pill" id="cSev">high</span>
+          </div>
+          <span class="card-date" id="cDate">Date</span>
+        </header>
+
+        <div class="card-body">
+          <div class="card-score" id="cScore" data-sev="high">8.8</div>
+          <div class="card-text">
+            <h3 class="card-title" id="cTitle">Title</h3>
+            <p class="card-type" id="cType">Type</p>
+            <div class="card-foot">
+              <span class="card-foot-lbl">Plugin</span>
+              <span class="card-foot-val">WordPress ecosystem</span>
+            </div>
+          </div>
+        </div>
+
+        <footer class="card-bottom">
+          <span class="card-counter" id="cCounter">01 / 18</span>
+          <div class="card-progress" id="cProgress"><div></div></div>
+          <a class="card-link" id="cLink" href="#" target="_blank" rel="noopener">View record ↗</a>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="caps" id="capabilities">
+  <div class="caps-inner">
+    <div class="section-tag">// where I'm useful</div>
+    <h2 class="section-title">Eight surfaces, one operator.</h2>
+    <p class="section-lede">Manual-first, tooling-assisted, source-aware. Picked because each one has shipped real findings to vendors and platforms.</p>
+
+    <div class="caps-grid">
+      <div class="cap">
+        <div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+        <div class="cap-kicker">VAPT</div>
+        <h4>Web applications</h4>
+        <p>Authentication and session flaws, IDOR, SSRF, XSS chains, CSRF, CORS abuse, race conditions, business logic. OWASP ASVS aligned.</p>
+      </div>
+      <div class="cap">
+        <div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2"/></svg></div>
+        <div class="cap-kicker">VAPT</div>
+        <h4>APIs and GraphQL</h4>
+        <p>SDL recon, introspection abuse, depth and complexity DoS, auth-layer drift across environments, unsafe mutations, BOLA and mass assignment.</p>
+      </div>
+      <div class="cap">
+        <div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div class="cap-kicker">AI red team</div>
+        <h4>LLM and AI surfaces</h4>
+        <p>Prompt injection (direct and indirect), tool and RAG abuse, agent jailbreaks, system-prompt exfiltration, data leakage. OWASP LLM Top 10.</p>
+      </div>
+      <div class="cap">
+        <div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/></svg></div>
+        <div class="cap-kicker">VAPT</div>
+        <h4>Mobile applications</h4>
+        <p>Android and iOS. APK and IPA reversing, JADX, Frida hooks, native lib triage, deeplink and intent abuse, secrets and config exfiltration. MASVS aligned.</p>
+      </div>
+      <div class="cap">
+        <div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/><path d="M3 12h18M12 3v18"/></svg></div>
+        <div class="cap-kicker">VAPT</div>
+        <h4>Infrastructure</h4>
+        <p>External and internal network testing, host hardening, segmentation review, exposed admin services, lateral movement and privilege escalation.</p>
+      </div>
+      <div class="cap">
+        <div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 18a4 4 0 0 1 1-7.9A6 6 0 0 1 18 9a4 4 0 0 1 1 8H6"/><path d="M12 12v6m-3-3 3 3 3-3"/></svg></div>
+        <div class="cap-kicker">Audit</div>
+        <h4>Cloud misconfiguration</h4>
+        <p>AWS, GCP, Azure. Open buckets, exposed metadata, IAM blast-radius, Kubernetes and Envoy admin leaks, CDN cache abuse, Firebase rules.</p>
+      </div>
+      <div class="cap">
+        <div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 6 2 12l6 6M16 6l6 6-6 6M14 4 10 20"/></svg></div>
+        <div class="cap-kicker">Audit</div>
+        <h4>Source code review</h4>
+        <p>Secure code review across JavaScript, TypeScript, Python, Go, PHP. Bundled JS forensics, supply chain triage, prototype pollution, SAST validation.</p>
+      </div>
+      <div class="cap">
+        <div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18M8 14h8M2 22h20"/></svg></div>
+        <div class="cap-kicker">VAPT</div>
+        <h4>Thick clients</h4>
+        <p>Windows desktop and Electron applications. IPC abuse, DLL hijack, registry and filesystem hardening, traffic interception, binary patching.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS & PLATFORMS -->
+<section class="toolkit" id="toolkit">
+  <div class="toolkit-inner">
+    <div class="section-tag">// toolkit</div>
+    <h2 class="section-title">Tools that earn their keep.</h2>
+    <p class="section-lede">No magic, no AI scanners pretending to be operators. The list below is what actually shows up in my engagements.</p>
+    <div class="toolkit-grid">
+      <div class="tk-col">
+        <h5>Web &amp; API</h5>
+        <ul>
+          <li>Burp Suite Pro</li>
+          <li>Caido</li>
+          <li>mitmproxy</li>
+          <li>Postman / Insomnia</li>
+          <li>HTTPie, curl, jq</li>
+          <li>Playwright for repro</li>
+        </ul>
+      </div>
+      <div class="tk-col">
+        <h5>Recon &amp; surface</h5>
+        <ul>
+          <li>amass, subfinder, httpx</li>
+          <li>nuclei templates</li>
+          <li>katana, gau, waybackurls</li>
+          <li>ffuf, gobuster</li>
+          <li>nmap, masscan</li>
+          <li>shodan, fofa, censys</li>
+        </ul>
+      </div>
+      <div class="tk-col">
+        <h5>Mobile &amp; thick client</h5>
+        <ul>
+          <li>JADX, apktool, jeb</li>
+          <li>Frida, objection</li>
+          <li>Wireshark</li>
+          <li>Ghidra, IDA</li>
+          <li>Process Monitor, Procmon</li>
+          <li>Burp + AOSP emulator</li>
+        </ul>
+      </div>
+      <div class="tk-col">
+        <h5>Code &amp; cloud</h5>
+        <ul>
+          <li>Semgrep, CodeQL</li>
+          <li>ripgrep, ast-grep</li>
+          <li>trufflehog, gitleaks</li>
+          <li>kubectl, k9s</li>
+          <li>aws / gcloud / az CLIs</li>
+          <li>ScoutSuite, Prowler</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="platforms">
+      <div class="platforms-label">Disclosure platforms</div>
+      <div class="platforms-list">
+        <span>HackerOne</span><span>Bugcrowd</span><span>Wordfence Threat Intel</span>
+        <span>Intigriti</span><span>YesWeHack</span><span>Synack</span><span>Vendor VDPs</span><span>MITRE CVE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="process-inner">
+    <div class="section-tag">// engagement</div>
+    <h2 class="section-title">A simple, predictable engagement.</h2>
+    <p class="section-lede">Four steps, fixed deliverables, no surprises. NDA on request before scoping.</p>
+    <ol class="proc-steps">
+      <li>
+        <div class="proc-num">01</div>
+        <div>
+          <h4>Scope, no charge</h4>
+          <p>A 30 minute call to agree targets, depth, exclusions, timeline, and the shape of the deliverable.</p>
+        </div>
+      </li>
+      <li>
+        <div class="proc-num">02</div>
+        <div>
+          <h4>Threat model</h4>
+          <p>Surface mapping and a prioritized attack plan. You sign off before active testing begins.</p>
+        </div>
+      </li>
+      <li>
+        <div class="proc-num">03</div>
+        <div>
+          <h4>Manual testing</h4>
+          <p>Daily updates, immediate notice on Critical findings, full audit trail of requests and tooling.</p>
+        </div>
+      </li>
+      <li>
+        <div class="proc-num">04</div>
+        <div>
+          <h4>Report and retest</h4>
+          <p>Executive summary, per-finding writeups with PoCs, severity rationale, and remediation guidance. One free retest after fixes.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ENGAGEMENT TIERS -->
+<section class="tiers" id="engagements">
+  <div class="tiers-inner">
+    <div class="section-tag">// engagements</div>
+    <h2 class="section-title">Three ways to work together.</h2>
+    <p class="section-lede">Pick the shape that matches the asset and the timeline. All three end with a written report and one free retest after remediation.</p>
+    <div class="tiers-grid">
+      <article class="tier">
+        <header>
+          <span class="tier-kicker">most common</span>
+          <h3>One shot audit</h3>
+          <p class="tier-sub">Fixed scope, fixed timeline.</p>
+        </header>
+        <ul class="tier-feat">
+          <li>One to four week engagement</li>
+          <li>Manual testing across the agreed surface</li>
+          <li>Daily updates, immediate notice on Critical</li>
+          <li>Executive summary plus per finding writeups</li>
+          <li>One free retest after remediation</li>
+        </ul>
+        <div class="tier-fit">Best for product launches, pre acquisition due diligence, and post incident assurance.</div>
+      </article>
+
+      <article class="tier is-feature">
+        <header>
+          <span class="tier-kicker">deep dive</span>
+          <h3>Source aware code review</h3>
+          <p class="tier-sub">Static and dynamic, against your codebase.</p>
+        </header>
+        <ul class="tier-feat">
+          <li>Targeted PR or service or codebase</li>
+          <li>Manual review with Semgrep / CodeQL backing</li>
+          <li>Architectural risk callouts, not just line bugs</li>
+          <li>Findings in a triage friendly format</li>
+          <li>Pairing session with engineering on request</li>
+        </ul>
+        <div class="tier-fit">Best for security sensitive features, third party libraries, and compliance audits.</div>
+      </article>
+
+      <article class="tier">
+        <header>
+          <span class="tier-kicker">ongoing</span>
+          <h3>Quarterly retainer</h3>
+          <p class="tier-sub">Rolling scope, predictable depth.</p>
+        </header>
+        <ul class="tier-feat">
+          <li>Reserved hours each quarter</li>
+          <li>Continuous surface monitoring</li>
+          <li>Priority for new feature reviews</li>
+          <li>Quarterly executive summary</li>
+          <li>Lower per hour rate vs ad hoc work</li>
+        </ul>
+        <div class="tier-fit">Best for product teams under continuous change and platforms with frequent feature drops.</div>
+      </article>
+    </div>
+
+    <p class="tiers-foot">Pricing on inquiry. Most engagements land between a fixed retainer rate and a per project fee, scoped on the call.</p>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<section class="wall">
+  <div class="section-tag center">// surfaces touched</div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>WordPress plugin ecosystem</span><span>·</span>
+      <span>GraphQL gateways</span><span>·</span>
+      <span>SAP Commerce</span><span>·</span>
+      <span>Android APK reversing</span><span>·</span>
+      <span>GitHub Actions supply chain</span><span>·</span>
+      <span>OAuth and OIDC flows</span><span>·</span>
+      <span>Cloudflare and CloudFront edges</span><span>·</span>
+      <span>Firebase RTDB</span><span>·</span>
+      <span>Envoy and Kubernetes admin surfaces</span><span>·</span>
+      <span>Webview bridges</span><span>·</span>
+      <span>postMessage XSS</span><span>·</span>
+      <span>WordPress plugin ecosystem</span><span>·</span>
+      <span>GraphQL gateways</span><span>·</span>
+      <span>SAP Commerce</span><span>·</span>
+      <span>Android APK reversing</span><span>·</span>
+      <span>GitHub Actions supply chain</span><span>·</span>
+      <span>OAuth and OIDC flows</span><span>·</span>
+      <span>Cloudflare and CloudFront edges</span><span>·</span>
+      <span>Firebase RTDB</span><span>·</span>
+      <span>Envoy and Kubernetes admin surfaces</span><span>·</span>
+      <span>Webview bridges</span><span>·</span>
+      <span>postMessage XSS</span><span>·</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-card">
+    <div class="contact-glow" aria-hidden="true"></div>
+    <div class="section-tag">// next move</div>
+    <h2 class="section-title">Let's talk.</h2>
+    <p class="section-lede">Tell me what the asset is and what worries you. You will get a scoped proposal and start date inside 24 hours.</p>
+    <div class="contact-actions">
+      <a class="btn btn-primary big" href="mailto:bug.digg3r@gmail.com?subject=Engagement%20inquiry">
+        bug.digg3r@gmail.com
+      </a>
+      <div class="contact-links">
+        <a href="https://hackerone.com/bug_digger21" target="_blank" rel="noopener">HackerOne →</a>
+        <a href="https://wordfence.com/threat-intel/vulnerabilities/researchers/rasi-afeef" target="_blank" rel="noopener">Wordfence →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div>© <span id="year"></span> Rasi Afeef · Independent security researcher</div>
+  <div class="footer-meta">Available worldwide</div>
+</footer>
+
+</main>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>

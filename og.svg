@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0e14"/>
+      <stop offset="100%" stop-color="#11171f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff8a3c"/>
+      <stop offset="100%" stop-color="#ffb070"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="rgba(255,138,60,.10)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <g fill="rgba(255,138,60,.16)">
+    <circle cx="1050" cy="120" r="180"/>
+  </g>
+  <g font-family="Inter, system-ui, sans-serif" fill="#e6edf3">
+    <text x="80" y="170" font-size="34" font-weight="600" fill="#ff8a3c" font-family="JetBrains Mono, monospace">&gt;_ rasi.afeef</text>
+    <text x="80" y="320" font-size="92" font-weight="800" letter-spacing="-3">Penetration tests</text>
+    <text x="80" y="410" font-size="92" font-weight="800" letter-spacing="-3">that find what</text>
+    <text x="80" y="500" font-size="92" font-weight="800" letter-spacing="-3" fill="url(#accent)">others miss.</text>
+    <text x="80" y="570" font-size="24" fill="#9aa6b2" font-family="JetBrains Mono, monospace">Independent security researcher · Public CVEs · HackerOne</text>
+  </g>
+  <rect x="0" y="620" width="1200" height="10" fill="#ff8a3c"/>
+</svg>
