@@ -394,63 +394,79 @@
   </div>
 </section>
 
-<!-- ENGAGEMENT TIERS -->
+<!-- ENGAGEMENT TIERS (testing methodology) -->
 <section class="tiers" id="engagements">
   <div class="tiers-inner">
     <div class="section-tag">// engagements</div>
-    <h2 class="section-title">Three ways to work together.</h2>
-    <p class="section-lede">Pick the shape that matches the asset and the timeline. All three end with a written report and one free retest after remediation.</p>
+    <h2 class="section-title">Black box. Grey box. White box.</h2>
+    <p class="section-lede">The more access you give me, the more I find. Same operator, same rigor, three depths of access and three different yields.</p>
+
     <div class="tiers-grid">
-      <article class="tier">
+
+      <article class="tier" data-box="black">
         <header>
-          <span class="tier-kicker">most common</span>
-          <h3>One shot audit</h3>
-          <p class="tier-sub">Fixed scope, fixed timeline.</p>
+          <span class="tier-kicker">black box</span>
+          <h3>Outside in</h3>
+          <p class="tier-sub">No internal info, no credentials, no source.</p>
         </header>
         <ul class="tier-feat">
-          <li>One to four week engagement</li>
-          <li>Manual testing across the agreed surface</li>
-          <li>Daily updates, immediate notice on Critical</li>
-          <li>Executive summary plus per finding writeups</li>
-          <li>One free retest after remediation</li>
+          <li>Pure attacker perspective from the public surface</li>
+          <li>Recon, fingerprinting, exploitation against shipped assets</li>
+          <li>One to three week engagement</li>
+          <li>Closest to a real adversary's view</li>
         </ul>
-        <div class="tier-fit">Best for product launches, pre acquisition due diligence, and post incident assurance.</div>
+        <div class="tier-meter" aria-label="Discovery depth: 2 of 5">
+          <span class="meter-label">Discovery depth</span>
+          <div class="meter-bar"><div class="meter-fill" style="width:30%"></div></div>
+          <span class="meter-num">2 / 5</span>
+        </div>
+        <div class="tier-fit">Best for external assurance, attacker simulation, and pre launch sanity checks.</div>
       </article>
 
-      <article class="tier is-feature">
+      <article class="tier" data-box="grey">
         <header>
-          <span class="tier-kicker">deep dive</span>
-          <h3>Source aware code review</h3>
-          <p class="tier-sub">Static and dynamic, against your codebase.</p>
+          <span class="tier-kicker">grey box</span>
+          <h3>Partial access</h3>
+          <p class="tier-sub">Credentials, partial docs, sometimes a staging URL.</p>
         </header>
         <ul class="tier-feat">
-          <li>Targeted PR or service or codebase</li>
-          <li>Manual review with Semgrep / CodeQL backing</li>
-          <li>Architectural risk callouts, not just line bugs</li>
-          <li>Findings in a triage friendly format</li>
-          <li>Pairing session with engineering on request</li>
+          <li>Authenticated and unauthenticated paths in scope</li>
+          <li>Architecture handover and basic threat modeling</li>
+          <li>Two to four week engagement</li>
+          <li>Best balance of realism and depth for most teams</li>
         </ul>
-        <div class="tier-fit">Best for security sensitive features, third party libraries, and compliance audits.</div>
+        <div class="tier-meter" aria-label="Discovery depth: 3 of 5">
+          <span class="meter-label">Discovery depth</span>
+          <div class="meter-bar"><div class="meter-fill" style="width:60%"></div></div>
+          <span class="meter-num">3 / 5</span>
+        </div>
+        <div class="tier-fit">Best for production audits, customer demos, and most freelance engagements.</div>
       </article>
 
-      <article class="tier">
+      <article class="tier is-feature" data-box="white">
         <header>
-          <span class="tier-kicker">ongoing</span>
-          <h3>Quarterly retainer</h3>
-          <p class="tier-sub">Rolling scope, predictable depth.</p>
+          <span class="tier-kicker">white box · highest yield</span>
+          <h3>Full transparency</h3>
+          <p class="tier-sub">Source, docs, architecture, and engineering access.</p>
         </header>
         <ul class="tier-feat">
-          <li>Reserved hours each quarter</li>
-          <li>Continuous surface monitoring</li>
-          <li>Priority for new feature reviews</li>
-          <li>Quarterly executive summary</li>
-          <li>Lower per hour rate vs ad hoc work</li>
+          <li>Manual source review backed by Semgrep / CodeQL</li>
+          <li>Threat modeling and architectural risk callouts</li>
+          <li>Dynamic exploitation against staging or production</li>
+          <li>Pairing sessions with engineering on request</li>
+          <li>Highest concentration of impactful findings, by far</li>
         </ul>
-        <div class="tier-fit">Best for product teams under continuous change and platforms with frequent feature drops.</div>
+        <div class="tier-meter" aria-label="Discovery depth: 5 of 5">
+          <span class="meter-label">Discovery depth</span>
+          <div class="meter-bar"><div class="meter-fill" style="width:100%"></div></div>
+          <span class="meter-num">5 / 5</span>
+        </div>
+        <div class="tier-fit">Best for security sensitive features, compliance audits, and engagements where time and budget are aligned with risk.</div>
       </article>
+
     </div>
 
-    <p class="tiers-foot">Pricing on inquiry. Most engagements land between a fixed retainer rate and a per project fee, scoped on the call.</p>
+    <p class="tiers-foot">Same operator. Same severity rationale. Yield scales with the access you grant. Pricing on inquiry.</p>
   </div>
 </section>
 
