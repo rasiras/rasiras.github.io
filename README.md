@@ -67,4 +67,4 @@ will be live at https://rasiafeef.com.
 - CVE rotator:  `main.js` array `const CVES = [...]`
 - Code panel:   `main.js` array `const SAMPLES = [...]`
 - Capabilities: `index.html` search `class="cap"`
-- Contact:      replace `bug.digg3r@gmail.com` site-wide
+- Contact:      `hello@rasiafeef.com` (search if you want to swap it again)
