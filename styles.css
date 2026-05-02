@@ -1252,7 +1252,29 @@ section { padding: 120px var(--pad); position: relative; }
   padding: 28px 26px 26px;
   background: linear-gradient(180deg, color-mix(in srgb, var(--text) 2%, transparent), transparent);
   display: flex; flex-direction: column; gap: 18px;
+  position: relative;
   transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+.tier-badge {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  padding: 5px 9px;
+  border-radius: 6px;
+  border: 1px solid currentColor;
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--text) 2%, transparent);
+}
+.tier[data-box="black"] .tier-badge { color: var(--text-muted); }
+.tier[data-box="grey"]  .tier-badge { color: color-mix(in srgb, var(--accent) 70%, var(--text-dim)); }
+.tier[data-box="white"] .tier-badge {
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-color: var(--accent);
 }
 .tier:hover {
   transform: translateY(-3px);
