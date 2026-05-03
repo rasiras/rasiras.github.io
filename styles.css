@@ -1102,6 +1102,51 @@ section { padding: 120px var(--pad); position: relative; }
 }
 .about-bullets strong { color: var(--text); font-weight: 600; }
 
+/* HackerOne signal block */
+.about-track {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px dashed var(--line);
+}
+.about-track .at-tag { margin-bottom: 16px; }
+.track-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.track-list li {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--text) 2%, transparent), transparent);
+  display: flex; flex-direction: column; gap: 6px;
+  transition: border-color .25s, transform .25s;
+}
+.track-list li:hover { border-color: var(--line-2); transform: translateY(-2px); }
+.track-num {
+  font-family: var(--mono);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -.02em;
+  line-height: 1;
+}
+.track-suf { font-size: 16px; opacity: .85; margin-left: 1px; }
+.track-lbl {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  line-height: 1.35;
+}
+.track-foot {
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+@media (max-width: 720px) {
+  .track-list { grid-template-columns: 1fr; }
+}
+
 .about-side { position: sticky; top: 100px; }
 .about-card {
   border: 1px solid var(--line);
