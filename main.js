@@ -459,22 +459,22 @@ if (t && matchMedia('(hover: hover)').matches) {
 // Add or remove freely; the marquee re-renders identically in both groups.
 // ============================================
 const BRANDS = [
-  { name: 'Adobe',         slug: 'adobe' },
-  { name: 'Uber',          slug: 'uber' },
-  { name: 'X',             slug: 'x' },
-  { name: 'Spotify',       slug: 'spotify' },
-  { name: 'Sony',          slug: 'sony' },
-  { name: 'Intel',         slug: 'intel' },
-  { name: 'Roblox',        slug: 'roblox' },
-  { name: 'Crypto.com',    slug: 'cryptodotcom' },
-  { name: 'Epic Games',    slug: 'epicgames' },
-  { name: 'WordPress',     slug: 'wordpress' },
-  { name: 'Cloudflare',    slug: 'cloudflare' },
-  { name: 'Hostinger',     slug: 'hostinger' },
-  { name: 'Razer',         slug: 'razer' },
-  { name: 'Pendo',         init: 'P' },
-  { name: 'Omise',         init: 'O' },
-  { name: 'Ping Identity', init: 'P' },
+  { name: 'Adobe',         icon: 'https://api.iconify.design/cib/adobe.svg' },
+  { name: 'Uber',          icon: 'https://cdn.simpleicons.org/uber' },
+  { name: 'X',             icon: 'https://cdn.simpleicons.org/x' },
+  { name: 'Spotify',       icon: 'https://cdn.simpleicons.org/spotify' },
+  { name: 'Sony',          icon: 'https://cdn.simpleicons.org/sony' },
+  { name: 'Intel',         icon: 'https://cdn.simpleicons.org/intel' },
+  { name: 'Roblox',        icon: 'https://cdn.simpleicons.org/roblox' },
+  { name: 'Crypto.com',    icon: 'https://api.iconify.design/arcticons/cryptocom.svg' },
+  { name: 'Epic Games',    icon: 'https://cdn.simpleicons.org/epicgames' },
+  { name: 'WordPress',     icon: 'https://cdn.simpleicons.org/wordpress' },
+  { name: 'Cloudflare',    icon: 'https://cdn.simpleicons.org/cloudflare' },
+  { name: 'Hostinger',     icon: 'https://cdn.simpleicons.org/hostinger' },
+  { name: 'Razer',         icon: 'https://cdn.simpleicons.org/razer' },
+  { name: 'Pendo',         icon: 'assets/logos/pendo.svg' },
+  { name: 'Omise',         icon: 'assets/logos/omise.svg' },
+  { name: 'Ping Identity', icon: 'assets/logos/ping-identity.svg' },
 ];
 
 (() => {
@@ -482,8 +482,8 @@ const BRANDS = [
   if (!groups[0]) return;
 
   const html = BRANDS.map(b => {
-    const ico = b.slug
-      ? `<span class="brand-ico" style="--ico:url(https://cdn.simpleicons.org/${b.slug})"></span>`
+    const ico = b.icon
+      ? `<span class="brand-ico" style="--ico:url('${b.icon}')"></span>`
       : `<span class="brand-ico brand-ico--init">${b.init || b.name[0]}</span>`;
     return `<li class="brand">${ico}<b class="brand-name">${b.name}</b></li>`;
   }).join('');

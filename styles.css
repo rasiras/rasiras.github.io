@@ -969,6 +969,15 @@ section { padding: 120px var(--pad); position: relative; }
 .brands-title { margin: 0 auto 14px; }
 .brands-lede   { margin: 0 auto; max-width: 60ch; }
 
+.brands-foot {
+  margin-top: 26px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--text-muted);
+  letter-spacing: .02em;
+}
+
 /* Brand marquee */
 .brand-marquee {
   margin-top: 50px;
