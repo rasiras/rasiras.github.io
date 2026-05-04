@@ -453,6 +453,45 @@ if (t && matchMedia('(hover: hover)').matches) {
 }
 
 // ============================================
+// Hall of fame brand marquee
+// `slug` is a Simple Icons slug (https://simpleicons.org).
+// `init` is the fallback initial-letter chip when no icon exists.
+// Add or remove freely; the marquee re-renders identically in both groups.
+// ============================================
+const BRANDS = [
+  { name: 'Adobe',         slug: 'adobe' },
+  { name: 'Uber',          slug: 'uber' },
+  { name: 'X',             slug: 'x' },
+  { name: 'Spotify',       slug: 'spotify' },
+  { name: 'Sony',          slug: 'sony' },
+  { name: 'Intel',         slug: 'intel' },
+  { name: 'Roblox',        slug: 'roblox' },
+  { name: 'Crypto.com',    slug: 'cryptodotcom' },
+  { name: 'Epic Games',    slug: 'epicgames' },
+  { name: 'WordPress',     slug: 'wordpress' },
+  { name: 'Cloudflare',    slug: 'cloudflare' },
+  { name: 'Hostinger',     slug: 'hostinger' },
+  { name: 'Razer',         slug: 'razer' },
+  { name: 'Pendo',         init: 'P' },
+  { name: 'Omise',         init: 'O' },
+  { name: 'Ping Identity', init: 'P' },
+];
+
+(() => {
+  const groups = [document.getElementById('brandGroupA'), document.getElementById('brandGroupB')];
+  if (!groups[0]) return;
+
+  const html = BRANDS.map(b => {
+    const ico = b.slug
+      ? `<span class="brand-ico" style="--ico:url(https://cdn.simpleicons.org/${b.slug})"></span>`
+      : `<span class="brand-ico brand-ico--init">${b.init || b.name[0]}</span>`;
+    return `<li class="brand">${ico}<b class="brand-name">${b.name}</b></li>`;
+  }).join('');
+
+  groups.forEach(g => { g.innerHTML = html; });
+})();
+
+// ============================================
 // Nav shadow on scroll
 // ============================================
 const nav = document.querySelector('.nav');

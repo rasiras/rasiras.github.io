@@ -963,48 +963,102 @@ section { padding: 120px var(--pad); position: relative; }
 /* ============================================
    WALL / MARQUEE
    ============================================ */
-.wall { padding: 100px 0; overflow: hidden; }
-.marquee {
-  margin-top: 30px;
+/* Brands "Validated by" header */
+.brands { padding: 100px 0 110px; overflow: hidden; }
+.brands-inner { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); text-align: center; }
+.brands-title { margin: 0 auto 14px; }
+.brands-lede   { margin: 0 auto; max-width: 60ch; }
+
+/* Brand marquee */
+.brand-marquee {
+  margin-top: 50px;
   overflow: hidden;
   position: relative;
   mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
   -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
 }
-.marquee-track {
+.brand-track {
   display: flex;
   width: max-content;
-  font-family: var(--mono);
-  font-size: 18px;
-  color: var(--text-dim);
-  animation: scroll 60s linear infinite;
+  animation: scroll 55s linear infinite;
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
-.marquee-group {
+.brand-group {
   display: flex;
   flex-shrink: 0;
-  gap: 28px;
-  padding-right: 28px;
+  gap: 18px;
+  padding-right: 18px;
   white-space: nowrap;
+  margin: 0; padding-left: 0;
+  list-style: none;
 }
-.marquee span { display: inline-block; }
-.marquee-group span:nth-child(odd)  { color: var(--text); }
-.marquee-group span:nth-child(even) { color: var(--accent); }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--text) 2%, transparent), transparent);
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--text);
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+}
+.brand:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 8%, transparent);
+}
+.brand-name { font-weight: 600; letter-spacing: .01em; }
+
+.brand-ico {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  background-color: var(--text);
+  -webkit-mask-image: var(--ico);
+  mask-image: var(--ico);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+  transition: background-color .25s;
+}
+.brand:hover .brand-ico { background-color: var(--accent); }
+
+.brand-ico--init {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
 @keyframes scroll {
   0%   { transform: translate3d(0, 0, 0); }
   100% { transform: translate3d(-50%, 0, 0); }
 }
 
 /* Pause on hover so users can read */
-.marquee:hover .marquee-track { animation-play-state: paused; }
+.brand-marquee:hover .brand-track { animation-play-state: paused; }
 
 @media (max-width: 720px) {
-  .marquee-track { font-size: 14px; animation-duration: 36s; }
-  .marquee-group { gap: 18px; padding-right: 18px; }
-  .marquee {
+  .brand-track { animation-duration: 38s; }
+  .brand { padding: 10px 16px; font-size: 13px; }
+  .brand-marquee {
     mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%);
     -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%);
   }
@@ -1012,7 +1066,7 @@ section { padding: 120px var(--pad); position: relative; }
 
 /* Respect users who don't want motion */
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track { animation: none; }
+  .brand-track { animation: none; }
 }
 
 /* ============================================
